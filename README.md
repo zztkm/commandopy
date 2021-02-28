@@ -22,7 +22,6 @@ Shell Script や Bat ファイルを書かなくても実行したいコマン�
 - エラーハンドリングとかどうする？
 	- エラーがあればすぐに落とす仕様にする？？？
 
-
 ## Usage
 
 以下のイメージで使えるようにする予定です。
@@ -34,9 +33,9 @@ Shell Script や Bat ファイルを書かなくても実行したいコマン�
  from commando import commando
  
  
- def set_mycmd_path():
-     os.environ["MY_COMMAND_PATH"] = "C:\\\\Users\\me\\cmd\\mycmd.exe"
- 
+ def myprint():
+     print("コマンドー")
+
  
  # コマンド文字列
  commando.add("mkdir test")
@@ -44,7 +43,7 @@ Shell Script や Bat ファイルを書かなくても実行したいコマン�
  commando.add(["touch", "test\test.txt"])
 
  # 独自定義の関数
- commando.add(set_mycmd_path)
+ commando.add(myprint)
  
  # 追加した順でコマンドを実行
  commando.execute()
