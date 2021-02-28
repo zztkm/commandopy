@@ -1,6 +1,9 @@
 from commando import commando
 
 
+test3 = "test\\test3.txt"
+
+
 def myprint():
     print("------------------------")
     print("Hello Commando !")
@@ -11,6 +14,7 @@ commando.add("mkdir test")
 
 commando.add(["touch", "test\\test.txt"])
 commando.add(["touch", "test\\test2.txt"])
+commando.add(["touch", test3])
 
 commando.add(myprint)
 
