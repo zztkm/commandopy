@@ -2,6 +2,7 @@
 name = "pycommando"
 version = "0.1.0"
 description = "A framework for batch processing."
+readme = "README.md"
 authors = ["zztkm"]
 packages = [
     { include = "commando" },
