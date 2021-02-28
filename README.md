@@ -1,6 +1,6 @@
-# wip Commando
+# Commando
 
-Commando(コマンドー)。
+Commando is a framework for batch processing.
 
 コマンドラインツールを脳筋で実行していくバッチ処理のためのフレームワーク。
 基本的にPythonの構文でワークフローを構築できるので、バッチ処理での変数の取り回しなどがしやすいのがメリット。
@@ -24,11 +24,8 @@ Shell Script や Bat ファイルを書かなくても実行したいコマン�
 
 ## Usage
 
-以下のイメージで使えるようにする予定です。
-
 ```python
  import os
- from pathlib import Path
  
  from commando import commando
  
@@ -40,7 +37,7 @@ Shell Script や Bat ファイルを書かなくても実行したいコマン�
  # コマンド文字列
  commando.add("mkdir test")
  # リスト形式のコマンド
- commando.add(["touch", "test\test.txt"])
+ commando.add(["touch", "test\\test.txt"])
 
  # 独自定義の関数
  commando.add(myprint)

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pycommando"
 version = "0.1.0"
-description = ""
+description = "A framework for batch processing."
 authors = ["zztkm"]
 packages = [
     { include = "commando" },
