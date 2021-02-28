@@ -1,8 +1,11 @@
 [tool.poetry]
-name = "commando"
+name = "pycommando"
 version = "0.1.0"
 description = ""
-authors = ["zztkm <takumi.basket1682@gmail.com>"]
+authors = ["zztkm"]
+packages = [
+    { include = "commando" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
