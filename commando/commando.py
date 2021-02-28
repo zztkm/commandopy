@@ -15,4 +15,10 @@ class Commando:
     def execute(self):
         commands = self.__commands
         for cmd in commands:
-            subprocess.run(cmd, shell=True)
+
+            # 呼び出し可能かどうかで条件分岐
+            if callable(cmd):
+                # 返り値は特に受け取らない
+                cmd()
+            else:
+                subprocess.run(cmd, shell=True)
