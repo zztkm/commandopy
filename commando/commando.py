@@ -20,10 +20,9 @@ class Commando:
     def execute(self):
         commands = self.__commands
         for cmd in commands:
-            # 呼び出し可能かどうかで条件分岐
             logger.debug(cmd)
+            # 呼び出し可能かどうかで条件分岐
             if callable(cmd):
-
                 try:
                     cmd()
                 except Exception:
