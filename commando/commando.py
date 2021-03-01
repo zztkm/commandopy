@@ -21,4 +21,4 @@ class Commando:
                 # 返り値は特に受け取らない
                 cmd()
             else:
-                subprocess.run(cmd, shell=True)
+                subprocess.run(cmd, check=True)
