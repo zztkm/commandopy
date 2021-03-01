@@ -24,24 +24,25 @@ Shell Script や Bat ファイルを書かなくても実行したいコマン�
 
 ## Usage
 
+```shell
+pip install pycommando
+```
+
 ```python
- import os
- 
- from commando import commando
- 
- 
- def myprint():
-     print("コマンドー")
+from commando import commando
 
- 
- # コマンド文字列
- commando.add("mkdir test")
- # リスト形式のコマンド
- commando.add(["touch", "test\\test.txt"])
 
- # 独自定義の関数
- commando.add(myprint)
- 
- # 追加した順でコマンドを実行
- commando.execute()
+def myprint():
+    print("コマンドー")
+
+
+# コマンド文字列
+commando.add("mkdir test")
+# リスト形式のコマンド
+commando.add(["touch", "test\\test.txt"])
+# 独自定義の関数
+commando.add(myprint)
+
+# 追加した順でコマンドを実行
+commando.execute()
 ```
