@@ -7,42 +7,57 @@ Commando is a framework for batch processing.
 
 Shell Script や Bat ファイルを書かなくても実行したいコマンドさえわかっていればバッチ処理が書ける。
 
-**コンセプト**
+## Concept 
 - バッチ処理ワークフローを構築するためのフレームワーク
 - 逐次処理で書く
 - 外部コマンドに関しては subprocess.run()が走る
 
-**Feature**
-- add()でコマンド追加
-- 追加された順に処理する
-- execute() で追加されたコマンドの実行
-- 関数もコマンドとして実行できる
 
-**課題**
-- エラーハンドリングとかどうする？
-	- エラーがあればすぐに落とす仕様にする？？？
+## Feature
+- `add()`
+    - add command
+- `execute(): `
+    - Execute the added command.
+- Process them in the order they were added.
+- Functions can also be executed as commands
 
 ## Usage
 
+install
 ```shell
 pip install pycommando
 ```
 
+script
 ```python
+import logging
+
 from commando import commando
 
-
-def myprint():
-    print("コマンドー")
+logging.basicConfig(filename="test.log", level=logging.DEBUG)
 
 
-# コマンド文字列
+def zero():
+    1 / 0
+
+
 commando.add("mkdir test")
-# リスト形式のコマンド
-commando.add(["touch", "test\\test.txt"])
-# 独自定義の関数
-commando.add(myprint)
+commando.add("touch test\\test.txt")
+commando.add(zero)
 
-# 追加した順でコマンドを実行
 commando.execute()
+```
+
+log
+```log
+DEBUG:commando.commando:mkdir test
+DEBUG:commando.commando:touch test\test.txt
+DEBUG:commando.commando:<function zero at 0x01A177C0>
+ERROR:commando.commando:Could not execute function
+Traceback (most recent call last):
+  File "C:\Users\takum\dev\pydev\commando\commando\commando.py", line 29, in execute
+    cmd()
+  File "main.py", line 9, in zero
+    1 / 0
+ZeroDivisionError: division by zero
 ```
