@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pycommando"
-version = "1.0.0"
+version = "1.0.1"
 description = "A framework for batch processing."
 readme = "README.md"
 authors = ["zztkm"]
