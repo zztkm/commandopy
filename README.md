@@ -2,6 +2,8 @@
 
 Commando is a framework for batch processing.
 
+Versioning of this repository follows [Semantic Versioning 2.0.0](https://semver.org/)
+
 コマンドラインツールを脳筋で実行していくバッチ処理のためのフレームワーク。
 基本的にPythonの構文でワークフローを構築できるので、バッチ処理での変数の取り回しなどがしやすいのがメリット。
 
