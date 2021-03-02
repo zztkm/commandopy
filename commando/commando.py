@@ -26,7 +26,7 @@ class Commando:
                 try:
                     cmd()
                 except Exception:
-                    logger.exception("Failed")
+                    logger.exception("Runtime error")
                     sys.exit(1)
             else:
                 try:
