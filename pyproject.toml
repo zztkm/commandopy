@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pycommando"
-version = "0.2.0"
+version = "1.0.2"
 description = "A framework for batch processing."
 readme = "README.md"
 authors = ["zztkm"]
@@ -9,7 +9,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

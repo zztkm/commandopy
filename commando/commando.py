@@ -26,7 +26,7 @@ class Commando:
                 try:
                     cmd()
                 except Exception:
-                    logger.exception("Could not execute function")
+                    logger.exception("Runtime error")
                     sys.exit(1)
             else:
                 try:
@@ -39,3 +39,5 @@ class Commando:
                     logger.exception(e.stderr.decode(
                         sys.getfilesystemencoding()))
                     sys.exit(1)
+        # execute が完了したら commands の要素をすべて削除する
+        self.__commands.clear()
