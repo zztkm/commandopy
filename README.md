@@ -55,7 +55,7 @@ DEBUG:commando.commando:touch test\test.txt
 DEBUG:commando.commando:<function zero at 0x01A177C0>
 ERROR:commando.commando:Could not execute function
 Traceback (most recent call last):
-  File "C:\Users\test\dev\pydev\venv\lib\site-packages\commando\commando.py", line 28, in execute
+  File "C:\venv\lib\site-packages\commando\commando.py", line 28, in execute
     cmd()
   File "main.py", line 10, in zero
     1 / 0
