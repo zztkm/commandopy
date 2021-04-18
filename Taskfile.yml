@@ -1,0 +1,18 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  default:
+    deps:
+      - task: test
+  test:
+    cmds:
+      - poetry run pytest
+  build:
+    cmds:
+      - poetry run build
+  publish:
+    cmds:
+      - poetry run publish
