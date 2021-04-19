@@ -2,7 +2,7 @@ test:
 	poetry run pytest
 
 build:
-	poetry run build
+	poetry build
 
 publish:
-	poetry run publish
+	poetry publish
