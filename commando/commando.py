@@ -12,12 +12,24 @@ class Commando:
         self.__commands = []
 
     def add(self, cmd):
+        """Add command
+
+        Args:
+            cmd (str or callable): Command string or callable you want to execute.
+        """
         self.__commands.append(cmd)
 
     def list(self):
+        """return commands list
+
+        Returns:
+            list: List of added commands.
+        """
         return self.__commands
 
     def execute(self):
+        """Execute the added command.
+        """
         commands = self.__commands
         for cmd in commands:
             logger.debug(cmd)
