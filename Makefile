@@ -21,7 +21,7 @@ doc-help:
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-doc-update:
+doc-update-module:
 	sphinx-apidoc -f -o ./docs ./commando
 
 doc-build:

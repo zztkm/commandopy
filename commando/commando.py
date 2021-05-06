@@ -7,6 +7,8 @@ logger = logging.getLogger(__name__)
 
 
 class Commando:
+    """Provide ths commando methods.
+    """
 
     def __init__(self):
         self.__commands = []
