@@ -24,10 +24,10 @@ doc-help:
 doc-update-module:
 	sphinx-apidoc -f -o ./docs ./commando
 
-doc-build:
+html-build:
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-doc-publish:
+html-publish:
 	git add docs/_build/html/
 	git commit -m "update: commando document(github pages)"
 	git subtree push --prefix docs/_build/html origin gh-pages
