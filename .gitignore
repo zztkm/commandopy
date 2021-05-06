@@ -5,3 +5,10 @@ __pycache__/
 dist/
 
 venv/
+
+# mkdocs documentation
+/site
+
+# Sphinx documentation
+# docs/_build/
+docs/_build/doctrees
