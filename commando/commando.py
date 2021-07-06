@@ -56,7 +56,7 @@ class Commando:
                     sys.exit(1)
             else:
                 stdout = self.__execute_subprocess_cmd(cmd)
-                logger.info(stdout)
+                print(stdout)
         # execute が完了したら commands の要素をすべて削除する
         self.__commands.clear()
 
