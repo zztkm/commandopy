@@ -1,5 +1,4 @@
-from commando import __version__
-from commando import commando
+from commando import __version__, commando
 
 
 def test_version():
@@ -13,7 +12,6 @@ def test_add():
 
 
 def test_add_multiple():
-    commando.add("touch test\test.py")
+    commando.add("cd test")
     cmd_list = commando.list()
-    print(cmd_list)
-    assert cmd_list == ["mkdir test", "touch test\test.py"]
+    assert cmd_list == ["mkdir test", "cd test"]

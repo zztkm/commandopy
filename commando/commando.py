@@ -1,7 +1,8 @@
-import subprocess
 import logging
+import subprocess
 import sys
 
+from commando.util import str_to_list
 
 logger = logging.getLogger(__name__)
 
@@ -12,6 +13,17 @@ class Commando:
 
     def __init__(self):
         self.__commands = []
+
+    def run(self, cmd: str) -> str:
+        """[summary]
+
+        Args:
+            cmd (str): Command string.
+
+        Returns:
+            str: stdout.
+        """
+        return self.__execute_subprocess_cmd(cmd)
 
     def add(self, cmd):
         """Add command
@@ -43,15 +55,31 @@ class Commando:
                     logger.exception("Runtime error")
                     sys.exit(1)
             else:
-                try:
-                    proc = subprocess.run(cmd, check=True, capture_output=True)
-                    stdout = proc.stdout.decode(sys.getfilesystemencoding())
-                    # 特に表示するものがないときは logging いらんよね?
-                    if stdout != "":
-                        logger.info(stdout)
-                except subprocess.CalledProcessError as e:
-                    logger.exception(e.stderr.decode(
-                        sys.getfilesystemencoding()))
-                    sys.exit(1)
+                stdout = self.__execute_subprocess_cmd(cmd)
+                print(stdout)
         # execute が完了したら commands の要素をすべて削除する
         self.__commands.clear()
+
+    def __execute_subprocess_cmd(self, cmd) -> str:
+        """execute cmd
+
+        Args:
+            cmd (str or List): Command string or list.
+
+        Returns:
+            str: string stdout.
+        """
+        if type(cmd) is str:
+            cmd = str_to_list(cmd)
+        try:
+            proc = subprocess.run(cmd, check=True, capture_output=True)
+            stdout = proc.stdout.decode(sys.getfilesystemencoding())
+            stderr = proc.stderr.decode(sys.getfilesystemencoding())
+            if stderr != "":
+                logger.info(stderr)
+            return stdout
+        except subprocess.CalledProcessError as e:
+            # logging stderr
+            logger.exception(e.stderr.decode(
+                sys.getfilesystemencoding()))
+            sys.exit(e.returncode)
