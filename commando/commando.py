@@ -2,7 +2,7 @@ import logging
 import subprocess
 import sys
 
-from util import str_to_list
+from commando.util import str_to_list
 
 logger = logging.getLogger(__name__)
 

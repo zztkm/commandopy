@@ -12,6 +12,6 @@ def test_add():
 
 
 def test_add_multiple():
-    commando.add("touch test\test.py")
+    commando.add("cd test")
     cmd_list = commando.list()
-    assert cmd_list == ["mkdir test", "touch test\test.py"]
+    assert cmd_list == ["mkdir test", "cd test"]
