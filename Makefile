@@ -28,6 +28,6 @@ html-build:
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 html-publish:
-	git add docs/_build/html/
+	git add -f docs/_build/html/
 	git commit -m "update: commando document(github pages)"
 	git subtree push --prefix docs/_build/html origin gh-pages

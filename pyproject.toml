@@ -11,6 +11,14 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.7"
 
+[tool.poetry.group.dev.dependencies]
+Sphinx = "^5.0.2"
+sphinx-rtd-theme = "^1.0.0"
+sphinx-autodoc-typehints = "^1.18.3"
+furo = "^2022.6.21"
+myst-parser = "^0.18.0"
+sphinx-copybutton = "^0.5.0"
+
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 autopep8 = "^1.5.5"

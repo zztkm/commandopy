@@ -10,5 +10,5 @@ venv/
 /site
 
 # Sphinx documentation
-# docs/_build/
+docs/_build/
 docs/_build/doctrees
