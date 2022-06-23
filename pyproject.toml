@@ -18,6 +18,7 @@ sphinx-autodoc-typehints = "^1.18.3"
 furo = "^2022.6.21"
 myst-parser = "^0.18.0"
 sphinx-copybutton = "^0.5.0"
+ghp-import = "^2.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
