@@ -12,12 +12,12 @@
 #
 # -- Project information -----------------------------------------------------
 
-project = 'commando'
-copyright = '2021, zztkm'
-author = 'zztkm'
+project = "commando"
+copyright = "2021, zztkm"
+author = "zztkm"
 
 # The full version, including alpha/beta/rc tags
-release = '1.0.2'
+release = "1.0.2"
 
 
 # -- General configuration ---------------------------------------------------
@@ -26,13 +26,13 @@ release = '1.0.2'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.todo',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.githubpages',
-    'sphinx_copybutton',
-    'myst_parser'
+    "sphinx.ext.autodoc",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.todo",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.githubpages",
+    "sphinx_copybutton",
+    "myst_parser",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -43,12 +43,12 @@ extensions = [
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'en'
+language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -56,7 +56,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'furo'
+html_theme = "furo"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
