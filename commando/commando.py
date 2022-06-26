@@ -17,13 +17,13 @@ class Commando:
         self.__commands: List[Command] = []
 
     def run(self, cmd: Union[str, List[str], Callable[..., Any]]) -> Any:
-        """[summary]
+        """Run your command
 
         Args:
-            cmd (str): Command string.
+            cmd (Union[str, List[str], Callable[..., Any]]): command
 
         Returns:
-            str: stdout.
+            Any | CompletedProcess[bytes]: callable return value or CompletedProcess[bytes]
         """
         # 呼び出し可能かどうかで条件分岐
         if callable(cmd):
@@ -53,7 +53,11 @@ class Commando:
         return self.__commands
 
     def execute(self):
-        """Execute the added command."""
+        """Execute the added command.
+
+        Note:
+            Now do not use this method.
+        """
         commands = self.__commands
         for cmd in commands:
             logger.debug(cmd)
@@ -70,7 +74,7 @@ class Commando:
         # execute が完了したら commands の要素をすべて削除する
         self.__commands.clear()
 
-    def __execute_subprocess_cmd(self, cmd: Union[str, List[str]]) -> str:
+    def __execute_subprocess_cmd(self, cmd: Union[str, List[str]]):
         """execute cmd
 
         Args:
@@ -81,14 +85,6 @@ class Commando:
         """
         if type(cmd) is str:
             cmd = str_to_list(cmd)
-        try:
-            proc = subprocess.run(cmd, check=True, capture_output=True)
-            stdout = proc.stdout.decode(sys.getfilesystemencoding())
-            stderr = proc.stderr.decode(sys.getfilesystemencoding())
-            if stderr != "":
-                logger.info(stderr)
-            return stdout
-        except subprocess.CalledProcessError as e:
-            # logging stderr
-            logger.exception(e.stderr.decode(sys.getfilesystemencoding()))
-            sys.exit(e.returncode)
+
+        proc = subprocess.run(cmd, check=True, capture_output=True)
+        return proc
