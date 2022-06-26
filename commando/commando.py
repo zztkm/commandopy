@@ -86,5 +86,5 @@ class Commando:
         if type(cmd) is str:
             cmd = str_to_list(cmd)
 
-        proc = subprocess.run(cmd, check=True, capture_output=True)
+        proc = subprocess.run(cmd, capture_output=True)
         return proc
