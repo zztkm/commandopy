@@ -1,7 +1,7 @@
 import logging
 import subprocess
 import sys
-from typing import Any, Callable, List, Union
+from typing import Any, Callable, List, Union, overload
 
 from commando.util import str_to_list
 
@@ -15,6 +15,15 @@ class Commando:
 
     def __init__(self):
         self.__commands: List[Command] = []
+
+    @overload
+    def run(self, cmd: str) -> subprocess.CompletedProcess[bytes]: ...
+
+    @overload
+    def run(self, cmd: List[str]) -> subprocess.CompletedProcess[bytes]: ...
+
+    @overload
+    def run(self, cmd: Callable[..., Any]) ->  Any: ...
 
     def run(self, cmd: Union[str, List[str], Callable[..., Any]]):
         """Run your command
