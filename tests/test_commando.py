@@ -2,7 +2,7 @@ from commando import __version__, commando
 
 
 def test_version():
-    assert __version__ == '1.0.2'
+    assert __version__ == "1.0.2"
 
 
 def test_add():

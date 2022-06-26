@@ -1,6 +1,8 @@
 *.un~
-
+.python-version
 __pycache__/
+.coverage
+coverage.xml
 
 dist/
 
@@ -10,5 +12,4 @@ venv/
 /site
 
 # Sphinx documentation
-# docs/_build/
-docs/_build/doctrees
+docs/_build/
