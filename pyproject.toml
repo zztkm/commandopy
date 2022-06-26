@@ -4,6 +4,9 @@ version = "2.0.0"
 description = "A framework for batch processing."
 readme = "README.md"
 authors = ["zztkm"]
+packages = [
+    { include = "commando" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
