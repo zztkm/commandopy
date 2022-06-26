@@ -30,4 +30,4 @@ html-build:
 html-publish:
 	git add -f docs/_build/html/
 	git commit -m "update: commando document(github pages)"
-	git subtree push --prefix docs/_build/html origin gh-pages
+	git subtree push --force --prefix docs/_build/html origin gh-pages
