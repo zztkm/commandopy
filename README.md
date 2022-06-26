@@ -1,5 +1,8 @@
 # Commando
 
+[![Latest Version](https://pypip.in/version/pycommando/badge.svg)](https://pypi.org/project/pycommando/)
+
+
 Commando is a framework for batch processing.
 
 Versioning of this repository follows [Semantic Versioning 2.0.0](https://semver.org/)
