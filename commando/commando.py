@@ -16,7 +16,7 @@ class Commando:
     def __init__(self):
         self.__commands: List[Command] = []
 
-    def run(self, cmd: Union[str, List[str], Callable[..., Any]]) -> Any:
+    def run(self, cmd: Union[str, List[str], Callable[..., Any]]):
         """Run your command
 
         Args:
