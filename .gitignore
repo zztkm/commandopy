@@ -13,3 +13,4 @@ venv/
 
 # Sphinx documentation
 docs/_build/
+docs/_build/html
